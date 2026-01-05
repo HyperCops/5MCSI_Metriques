@@ -35,6 +35,11 @@ def monhistogramme():
 def contact():
     return render_template("contact.html")
 
+from flask import Flask, render_template, jsonify
+import urllib.request, json
+from datetime import datetime
+
+# ... (votre code précédent) ...
 @app.route('/commits/')
 def commits():
     return render_template("commits.html")
