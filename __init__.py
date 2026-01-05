@@ -40,6 +40,7 @@ import urllib.request, json
 from datetime import datetime
 
 # ... (votre code précédent) ...
+
 @app.route('/commits/')
 def commits():
     return render_template("commits.html")
@@ -47,7 +48,7 @@ def commits():
 @app.route('/commits-data/')
 def commits_data():
     # URL de l'API GitHub pour votre repository
-    url = 'https://github.com/HyperCops/5MCSI_Metriques/commits'
+    url = 'https://api.github.com/repos/HyperCops/5MCSI_Metriques/commits'
     
     # GitHub demande un User-Agent pour accepter la requête
     req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
