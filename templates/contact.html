@@ -2,11 +2,12 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contactez-moi</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-color: #f4f7f6;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -14,59 +15,73 @@
             margin: 0;
         }
         .contact-container {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            width: 400px;
-            color: white;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
         }
-        h2 { text-align: center; margin-bottom: 20px; }
-        .form-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
         input, textarea {
             width: 100%;
             padding: 10px;
+            border: 1px solid #ddd;
             border-radius: 8px;
-            border: none;
-            background: rgba(255, 255, 255, 0.8);
-            box-sizing: border-box; /* Évite que l'input dépasse */
+            box-sizing: border-box; /* Important pour que le padding ne dépasse pas */
+        }
+        textarea {
+            height: 100px;
+            resize: none;
         }
         button {
             width: 100%;
             padding: 12px;
+            background-color: #007bff;
+            color: white;
             border: none;
             border-radius: 8px;
-            background-color: #4facfe;
-            color: white;
-            font-weight: bold;
             cursor: pointer;
-            transition: 0.3s;
-            margin-top: 10px;
+            font-size: 16px;
+            transition: background 0.3s;
         }
-        button:hover { background-color: #00f2fe; transform: scale(1.02); }
+        button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
-    <div class="contact-container">
-        <h2>Me contacter</h2>
-        <form>
-            <div class="form-group">
-                <label>Nom</label>
-                <input type="text" placeholder="Votre nom...">
-            </div>
-            <div class="form-group">
-                <label>Prénom</label>
-                <input type="text" placeholder="Votre prénom...">
-            </div>
-            <div class="form-group">
-                <label>Message</label>
-                <textarea rows="4" placeholder="Votre message..."></textarea>
-            </div>
-            <button type="button">Envoyer (Démo)</button>
-        </form>
-    </div>
+
+<div class="contact-container">
+    <h2>📩 Contactez-moi</h2>
+    <form>
+        <div class="form-group">
+            <label for="firstname">Prénom</label>
+            <input type="text" id="firstname" name="firstname" placeholder="Votre prénom..." required>
+        </div>
+        <div class="form-group">
+            <label for="lastname">Nom</label>
+            <input type="text" id="lastname" name="lastname" placeholder="Votre nom..." required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Votre message ici..."></textarea>
+        </div>
+        <button type="button" onclick="alert('Merci ! Votre message a été (virtuellement) envoyé.')">Envoyer</button>
+    </form>
+</div>
+
 </body>
 </html>
