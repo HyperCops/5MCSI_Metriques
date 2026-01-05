@@ -34,15 +34,6 @@ def monhistogramme():
 @app.route("/contact/")
 def contact():
     return render_template("contact.html")
-  
-if __name__ == "__main__":
-  app.run(debug=True)
-
-from flask import Flask, render_template, jsonify
-import urllib.request, json
-from datetime import datetime
-
-# ... (votre code précédent) ...
 
 @app.route('/commits/')
 def commits():
@@ -84,3 +75,6 @@ def commits_data():
         results.append({'minute': i, 'count': minute_counts[i]})
         
     return jsonify(results=results)
+  
+if __name__ == "__main__":
+  app.run(debug=True)
